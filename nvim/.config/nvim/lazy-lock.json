@@ -25,3 +25,4 @@
   "ui": { "branch": "v2.5", "commit": "e9b5c33041ec42e1798e7920c0e83c9b4953675a" },
   "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" }
 }
+
