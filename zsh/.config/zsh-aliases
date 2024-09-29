@@ -1,0 +1,6 @@
+alias neofetch='fastfetch'
+alias diff='diff --color=auto'
+alias ls='ls -vh --group-directories-first --color=auto'
+alias grep='grep --color=auto'
+alias pwgen='pwgen -1cyns'
+alias rm='rm -I'
