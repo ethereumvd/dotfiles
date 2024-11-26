@@ -118,7 +118,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias btw="echo I use arch btw"
-alias cboi="cat /home/ethereum/play/boilerplate.cpp | xclip -sel c"
+alias cat="bat"
+alias lla="ls -la"
+alias ctl="cat ~/repos/play/ps/solves/tle_elim/template.cpp | wl-copy"
 
 # Created by `pipx` on 2024-08-24 14:40:17
 export PATH="$PATH:/home/ethereum/.local/bin"
+
+run() {
+    g++ "$1.cpp" -o "$1" && ./"$1" < in
+}

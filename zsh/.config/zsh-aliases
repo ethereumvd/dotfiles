@@ -4,3 +4,7 @@ alias ls='ls -vh --group-directories-first --color=auto'
 alias grep='grep --color=auto'
 alias pwgen='pwgen -1cyns'
 alias rm='rm -I'
+alias btw="echo I use arch btw"
+alias cat="bat"
+alias lla="ls -la"
+alias ctl="cat ~/repos/play/ps/solves/tle_elim/template.cpp | wl-copy"
