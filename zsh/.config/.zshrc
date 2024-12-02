@@ -120,11 +120,22 @@ export NVM_DIR="$HOME/.nvm"
 alias btw="echo I use arch btw"
 alias cat="bat"
 alias lla="ls -la"
-alias ctl="cat ~/repos/play/ps/solves/tle_elim/template.cpp | wl-copy"
 
 # Created by `pipx` on 2024-08-24 14:40:17
-export PATH="$PATH:/home/ethereum/.local/bin"
+export PATH="$PATH:/home/ethereum/.local/bin:/home/ethereum/.local/share/gem/ruby/3.3.0/bin"
+eval "$(zoxide init zsh)"
+export MANPAGER='nvim +Man!'
 
 run() {
     g++ "$1.cpp" -o "$1" && ./"$1" < in
+}
+ctl() {
+    if [ -z "$1" ]; then
+        echo "Usage: ctl <filename>"
+        return 1
+    fi
+    TEMPLATE_PATH=~/repos/play/ps/solves/tle_elim/template.cpp
+    NEW_FILE="$1.cpp"
+    cp "$TEMPLATE_PATH" "$NEW_FILE"
+    nvim "$NEW_FILE"
 }
