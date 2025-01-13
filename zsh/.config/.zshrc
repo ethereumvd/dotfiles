@@ -129,13 +129,36 @@ export MANPAGER='nvim +Man!'
 run() {
     g++ "$1.cpp" -o "$1" && ./"$1" < in
 }
-ctl() {
+runn() {
+    g++ "$1.cpp" -o "$1" && ./"$1"
+}
+atl() {
     if [ -z "$1" ]; then
-        echo "Usage: ctl <filename>"
+        echo "Usage: atl <filename>"
         return 1
     fi
     TEMPLATE_PATH=~/repos/play/ps/solves/tle_elim/template.cpp
     NEW_FILE="$1.cpp"
     cp "$TEMPLATE_PATH" "$NEW_FILE"
     nvim "$NEW_FILE"
+}
+ntl() {
+    if [ -z "$1" ]; then
+        echo "Usage: ntl <filename>"
+        return 1
+    fi
+    template=~/repos/play/ps/solves/tle_elim/templ.cpp
+    file_new="$1.cpp"
+    cp "$template" "$file_new"
+    nvim "$file_new"
+}
+copy() {
+    cat $1 | wl-copy 
+}
+rin() {
+    if [[ -f "in" ]]; then
+        wl-paste > in
+    else
+        echo "file 'in' does not exist."
+    fi
 }
